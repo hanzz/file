@@ -25,11 +25,14 @@ import hashlib
 import re
 
 def print_file_info(file_binary='file'):
-	popen = Popen('which ' + file_binary, shell=True, bufsize=4096, stdout=PIPE)
-	pipe = popen.stdout
-	output_which = pipe.read().strip()
-	if popen.wait() != 0:
-		raise ValueError('could not query {0} for its version ({1})!'.format(file_binary, output_which))
+	if not file_binary.startswith("/") and not file_binary.startswith("./"):
+		popen = Popen('which ' + file_binary, shell=True, bufsize=4096, stdout=PIPE)
+		pipe = popen.stdout
+		output_which = pipe.read().strip()
+		if popen.wait() != 0:
+			raise ValueError('could not query {0} for its version ({1})!'.format(file_binary, output_which))
+	else:
+		output_which =  file_binary
 	popen = Popen(file_binary + " --version", shell=True, bufsize=4096, stdout=PIPE)
 	pipe = popen.stdout
 	output_ver = pipe.read().strip()

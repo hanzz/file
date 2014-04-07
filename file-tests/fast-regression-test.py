@@ -29,7 +29,7 @@ def test_all_files(exact = False, binary = "file"):
 	global ret
 	ret = 0
 
-	print_file_info()
+	print_file_info(binary)
 
 	m = mutex.mutex()
 
