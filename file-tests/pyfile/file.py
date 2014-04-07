@@ -56,8 +56,7 @@ def get_file_output(filename, binary = "file"):
 	output = pipe.read()
 	output_err = popen.stderr.read()
 	if popen.wait() != 0:
-		print "Error getting file output:", output_err
-		return None
+		return "Error while calling file, output: " + str(output)
 	return output
 
 def get_file_mime(filename, binary = "file"):
@@ -66,8 +65,7 @@ def get_file_mime(filename, binary = "file"):
 	output = pipe.read()
 	output_err = popen.stderr.read()
 	if popen.wait() != 0:
-		print "Error getting file output:", output_err
-		return None
+		return "Error while calling file, output: " + str(output)
 	return output
 
 def get_simple_metadata(filename, binary = "file"):
