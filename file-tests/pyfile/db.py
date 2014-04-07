@@ -73,6 +73,7 @@ def is_regression(m1, m2, exact = False, ratio = 0.7):
 
 def get_diff(m1, m2, exact = False, ratio = 0.7):
 	if m1['output'] == None or m2['output'] == None:
+		print m1, m2
 		return "Output is None, was there error during File execution?"
 
 	text = ""
