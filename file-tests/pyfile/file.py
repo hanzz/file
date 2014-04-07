@@ -54,7 +54,9 @@ def get_file_output(filename, binary = "file"):
 	popen = Popen(binary + " -b " + filename, shell=True, bufsize=4096, stdout=PIPE)
 	pipe = popen.stdout
 	output = pipe.read()
+	output_err = pope.stderr.read()
 	if popen.wait() != 0:
+		print "Error getting file output:", output_err
 		return None
 	return output
 
@@ -62,7 +64,9 @@ def get_file_mime(filename, binary = "file"):
 	popen = Popen(binary + " -ib " + filename, shell=True, bufsize=4096, stdout=PIPE)
 	pipe = popen.stdout
 	output = pipe.read()
+	output_err = pope.stderr.read()
 	if popen.wait() != 0:
+		print "Error getting file output:", output_err
 		return None
 	return output
 
