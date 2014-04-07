@@ -51,7 +51,7 @@ def mkdir_p(path):
 		else: raise
 
 def get_file_output(filename, binary = "file"):
-	popen = Popen(binary + " -b " + filename, shell=True, bufsize=4096, stdout=PIPE)
+	popen = Popen(binary + " -b " + filename, shell=True, bufsize=4096, stdout=PIPE, stderr=PIPE)
 	pipe = popen.stdout
 	output = pipe.read()
 	output_err = popen.stderr.read()
@@ -61,7 +61,7 @@ def get_file_output(filename, binary = "file"):
 	return output
 
 def get_file_mime(filename, binary = "file"):
-	popen = Popen(binary + " -ib " + filename, shell=True, bufsize=4096, stdout=PIPE)
+	popen = Popen(binary + " -ib " + filename, shell=True, bufsize=4096, stdout=PIPE, stderr=PIPE)
 	pipe = popen.stdout
 	output = pipe.read()
 	output_err = popen.stderr.read()
