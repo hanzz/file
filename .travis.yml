@@ -11,3 +11,5 @@ script:
  - ./configure --disable-silent-rules
  - make -j4
  - make -C tests check
+ - /bin/bash ./run-file-tests.sh
+
