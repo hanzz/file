@@ -13,6 +13,6 @@ S'.pbm'
 p6
 sS'pattern'
 p7
-S'#filesystems\n# Automatically generated from:\n#filesystems:253\n30\t\tsearch/481\t\\x55\\xAA\t\n!:strength +72\n>11\t\tuleshort\t<512\t\t\n>>(11.s-2)\tuleshort\t0xAA55\t\tDOS/MBR boot sector\n>0x1FE\t\tleshort\t\t0xAA55\t\tDOS/MBR boot sector\n'
+S'#filesystems\n# Automatically generated from:\n#filesystems:253\n30\t\tsearch/481\t\\x55\\xAA\t\n!:strength +65\n>11\t\tuleshort\t<512\t\t\n>>(11.s-2)\tuleshort\t0xAA55\t\tDOS/MBR boot sector\n>0x1FE\t\tleshort\t\t0xAA55\t\tDOS/MBR boot sector\n'
 p8
 s.
